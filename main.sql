@@ -1,6 +1,9 @@
 -- create database with "KALBE" as the name
 CREATE DATABASE KALBE;
 
+-- use database "KALBE"
+USE KALBE;
+
 -- create table with the name "Inventory"
 -- with columns: 
 -- item_code, SMALLINT, NOT NULL, PRIMARY KEY
