@@ -3,10 +3,20 @@
 # Variables
 path="/hdfs/data/data1"
 name_of_directory="data1"
+filename_excel="daily_market_price.xlsx"
+source_dir="/local/data/market"
+target_dir="/hdfs/data/data1"
 
 # Check if the directory exists
 if [ -d "$path/$name_of_directory" ]; then
     echo "There is $name_of_directory Directory Exists!"
+
+    cp "$source_dir/$filename_excel" "$target_dir" # copy the file to the target directory
+    if [ $? -eq 0 ]; then # check if the copy command is successful
+        echo "File Moved Successfully" > "$target_dir/log.txt"
+    else
+        echo "Failed to move the file." > "$log_file"
+    fi
 else
     echo "$name_of_directory Directory Not Exists!"
     # Create the directory inside the path
